@@ -9,132 +9,81 @@
     <title>Curriculo</title>
     
 </head>
-<body class="antialiased ">
-    
-    <div class="flex flex-col md:flex-row justify-center mx-auto">
-        <div class="flex flex-col justify-center items-start w-max space-y-5">
-            <div class="flex flex-col">
-                <div class="flex flex-col justify-start items-start">
-                    <p class="text-4xl md:text-xl text-black">João Vitor da Silva Maia</p>
-                    <p class="text-2xl md:text-xs text-black">Desenvolvedor FullStack</p>
-                    <div class="flex flex-row md:flex-col space-x-5 md:space-x-0">
-                        <div class="flex justify-start items-center">
-                            <span class="material-symbols-rounded">
-                                mail
-                            </span>
-                            <a href="mailto:vitor.smaia1@gmail.com" class="cursor-pointer text-md md:text-xs text-gray-500">vitor.smaia1@gmail.com</a>
-                        </div>
-                        <div class="flex justify-start items-center">
-                            <span class="material-symbols-rounded">
-                                group_add
-                            </span>
-                            <a href="https://www.linkedin.com/in/vitorsmaia/" class="cursor-pointer text-md md:text-xs text-gray-500">/vitorsmaia</a>
-                        </div>
-                    </div>
-                    <p class="text-xl font-light w-96 text-black">Atualmente trabalho na Edmond Tech Desenvolvedor.</p>
-                </div>
-                <div class="flex justify-start items-center">
-                <span class="material-symbols-rounded">
-                    location_on
-                </span>
-                    <p>Brasil</p>
+    <body class="bg-gray-200 gap-5 m-5 grid md:grid-cols-12">
+            <div class="bg-white rounded-xl  py-2 px-3 w-full md:col-span-6">
+                <div class="">
+                    <p class="font-light text-2xl">Dados</p>
+                    <p class="font-light text-xl">João Vitor da Silva Maia</p>
+                    <p class="font-light text-xl">Desenvolvedor Full Stack</p>
+                    <p class="font-light text-xl">Email.: <a href="mailto:vitor.smaia1@gmail.com" class="cursor-pointer text-md md:text-xs text-gray-500">vitor.smaia1@gmail.com</a></p>
+                    <p class="font-light text-xl">Linkedin.: <a href="https://www.linkedin.com/in/vitorsmaia/" class="cursor-pointer text-md md:text-xs text-gray-500">/vitorsmaia</a></p>
+                    <p class="font-light text-xl">Local.: Brasil</p>
                 </div>
             </div>
-            <div class="w-96">
-                <p class=" text-xl font-light">
-                    Sempre em busca de adquirir novos conhecimentos e soluções com o intuito de trazer melhorias para automação dos processos realizados no dia a dia.
-                    Conhecimentos em desenvolvimento WEB utilizando as tecnologias para Back-end como NodeJS e PHP  junto ao Framework Laravel e VueJs.
-                    Conhecimentos em banco de dados MSSQL e MySQL com análise de dados para tomada de decisão.
+            <div class="bg-white rounded-xl  py-2 px-3 w-full md:col-span-6">
+                <div x-data="{ open: false }" class="flex flex-col justify-center items-center">
+                    <div x-on:click="open = !open"  class="flex flex-col items-center cursor-pointer">
+                        <p class="font-light text-2xl ">
+                            Certificados
+                        </p>
+                        <template x-if="open">
+                            <span class="material-symbols-rounded text-4xl font-light animate-bounce">
+                                expand_less
+                            </span>
+                        </template>
+                        <template x-if="!open">
+                            <span class="material-symbols-rounded text-4xl font-light animate-bounce">
+                                expand_more
+                            </span>
+                        </template>
 
+                    </div>
+                    <div x-show="open" x-transition class="grid md:grid-cols-12">
+                        <div class="col-span-12 col-span-12 md:col-span-6 flex justify-center p-2 ">
+                            <img class="h-48 shadow-2xl hover:cursor-pointer hover:scale-150 hover:z-10 hover:absolute translate-x-4 md:-skew-y-3 rounded-xl ease-in duration-300 " src="img/adm_banco.png" alt="ADM">
+                        </div>
+                        <div class="col-span-12 md:col-span-6 flex justify-center p-2">
+                            <img class="h-48 shadow-2xl hover:cursor-pointer hover:scale-150 hover:z-10 hover:absolute translate-x-4 md:-skew-y-3 rounded-xl ease-in duration-300" src="img/form_sessao_php.png" alt="ADM">
+                        </div>
+                        <div class="col-span-12 md:col-span-6 flex justify-center p-2">
+                            <img class="h-48 shadow-2xl hover:cursor-pointer hover:scale-150 hover:z-10 hover:absolute translate-x-4 md:-skew-y-3 rounded-xl ease-in duration-300" src="img/introducao_php.png" alt="ADM">
+                        </div>
+                        <div class="col-span-12 md:col-span-6 flex justify-center p-2">
+                            <img class="h-48 shadow-2xl hover:cursor-pointer hover:scale-150 hover:z-10 hover:absolute translate-x-4 md:-skew-y-3 rounded-xl ease-in duration-300" src="img/psr_php.png" alt="ADM">
+                        </div>
+                        <div class="col-span-12 md:col-span-6 flex justify-center p-2">
+                            <img class="h-48 shadow-2xl hover:cursor-pointer hover:scale-150 hover:z-10 hover:absolute translate-x-4 md:-skew-y-3 rounded-xl ease-in duration-300" src="img/laravel8.png" alt="ADM">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl  py-2 px-3 w-full md:col-span-6">
+                <div class="">
+                    <p class="font-light text-2xl">Sobre</p>
+                    <p class="font-light text-xl"> - Sempre em busca de adquirir novos conhecimentos e soluções com o intuito de trazer melhorias para automação dos processos realizados no dia a dia.</p>
+                    <p class="font-light text-xl"> - Conhecimentos em desenvolvimento WEB utilizando as tecnologias para Back-end como NodeJS e PHP  junto ao Framework Laravel e VueJs.</p>
+                    <p class="font-light text-xl"> - Conhecimentos em banco de dados MSSQL e MySQL com análise de dados para tomada de decisão.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl  py-2 px-3 w-full md:col-span-6">
+                <div class="">
+                    <p class="font-light text-2xl">Carreira</p>
+                    <p class="font-light text-xl"> - EDMOND Tech, Desenvolvedor Full Stack.</p>
+                    <p class="font-light">JAN de 2022 - ATUAL</p>
+                    <p class="font-light text-xl"> - Wirelink Telecom, Desenvolvedor Full Stack.</p>
+                    <p class="font-light">JUN de 2021 - JAN DE 2022</p>
+                    <p class="font-light text-xl"> - Wirelink Telecom, Analista de Sistemas.</p>
+                    <p class="font-light">FEV de 2018 - JUN DE 2021</p>
+                </div>
+            </div>
+
+            <footer class="mx-auto px-4 md:col-span-12">
+                <p class="text-sm text-gray-700 font-semibold  text-center">
+                    Copyright © <span>2022</span>
+                    <a target="_blank">
+                        DevTech by Vitor Maia.
+                    </a>
                 </p>
-            </div>
-            <div>
-                <p class="text-2xl font-bold">Habilidades</p>
-                <ul>
-                    <li class="font-light">Facilidade de aprendizado</li>
-                    <li class="font-light">Trabalho bem em equipe</li>
-                    <li class="font-light">Procuro entregar resultados com qualidade</li>
-                </ul>
-            </div>
-            <div>
-                <p class="text-2xl font-bold">Formação</p>
-                <ul>
-                    <li class="font-light">Incompleto, Analise e Desenvolvimento de Sistemas,Estácio FIC</li>
-                </ul>
-            </div>
-            <div>
-                <p class="text-2xl font-bold">Experiência</p>
-                <ul>
-                    <li class="font-light">
-                        <div class="flex justify-start items-center">
-                            <span class="material-symbols-rounded">
-                            check_indeterminate_small
-                        </span>
-                            EDMOND Tech, Desenvolvedor Full Stack.
-                        </div>
-                        <p class="ml-6">JAN de 2022 - ATUAL</p>
-                    </li>
-                    <li class="font-light">
-                        <div class="flex justify-start items-center">
-                            <span class="material-symbols-rounded">
-                                check_indeterminate_small
-                            </span>
-                                Wirelink Telecom, Desenvolvedor Full Stack.
-                        </div>
-                        <p class="ml-6">JUN de 2021 - JAN DE 2022</p>
-                    </li>
-                    <li class="font-light">
-                        <div class="flex justify-start items-center">
-                            <span class="material-symbols-rounded">
-                                check_indeterminate_small
-                            </span>
-                            Wirelink Telecom, Analista de Sistemas.
-                        </div>
-                        <p class="ml-6">FEV de 2018 - JUN DE 2021</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="grid grid-cols-12 p-2 ">
-            <div class="col-span-12 col-span-12 md:col-span-6 flex justify-center p-2 ">
-                <img class="h-48 shadow-2xl hover:cursor-pointer hover:scale-150 hover:z-10 hover:absolute translate-x-4 md:-skew-y-3 rounded-xl ease-in duration-300 " src="img/adm_banco.png" alt="ADM">
-            </div>
-            <div class="col-span-12 md:col-span-6 flex justify-center p-2 "></div>
-            <div class="col-span-12 md:col-span-6 flex justify-center p-2">
-                <img class="h-48 shadow-2xl hover:cursor-pointer hover:scale-150 hover:z-10 hover:absolute translate-x-4 md:-skew-y-3 rounded-xl ease-in duration-300" src="img/conhecendo_funcoes_php.png" alt="ADM">
-            </div>
-            <div class="col-span-12 md:col-span-6 flex justify-center p-2">
-                <img class="h-48 shadow-2xl hover:cursor-pointer hover:scale-150 hover:z-10 hover:absolute translate-x-4 md:-skew-y-3 rounded-xl ease-in duration-300" src="img/form_sessao_php.png" alt="ADM">
-            </div>
-            <div class="col-span-12 md:col-span-6 flex justify-center p-2">
-                <img class="h-48 shadow-2xl hover:cursor-pointer hover:scale-150 hover:z-10 hover:absolute translate-x-4 md:-skew-y-3 rounded-xl ease-in duration-300" src="img/introducao_php.png" alt="ADM">
-            </div>
-            <div class="col-span-12 md:col-span-6 flex justify-center p-2"></div>
-            <div class="col-span-12 md:col-span-6 flex justify-center p-2">
-                <img class="h-48 shadow-2xl hover:cursor-pointer hover:scale-150 hover:z-10 hover:absolute translate-x-4 md:-skew-y-3 rounded-xl ease-in duration-300" src="img/psr_php.png" alt="ADM">
-            </div>
-
-            <div class="col-span-12 md:col-span-6 flex justify-center p-2">
-                <img class="h-48 shadow-2xl hover:cursor-pointer hover:scale-150 hover:z-10 hover:absolute translate-x-4 md:-skew-y-3 rounded-xl ease-in duration-300" src="img/laravel8.png" alt="ADM">
-            </div>
-        </div>
-    </div>
-
-        
-
-    <footer class="relative pt-8 pb-6">
-        <div class="container mx-auto px-4">
-            <hr class="my-6">
-            <div class="flex flex-wrap items-center md:justify-between justify-center">
-                <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-                    <div class="text-sm text-blueGray-500 font-semibold py-1">
-                        Copyright © <span id="get-current-year">2022</span><a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800" target="_blank"> DevTech by
-                        <a href="https://www.creative-tim.com?ref=njs-profile" class="text-blueGray-500 hover:text-blueGray-800">Vitor Maia.</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-</body>
+            </footer>
+    </body>
 </html>
