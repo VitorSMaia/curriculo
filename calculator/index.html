@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator in Javascript</title>
+
+</head>
+<body class="bg-gray-100 flex flex-col justify-center items-center mt-10 p-10 ">
+    <div class="p-5 bg-white rounded-lg h-full w-full flex flex-col gap-5">
+        <div class="flex justify-end w-full">
+            <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Javascript-shield.svg" alt="">
+        </div>
+        <div class="grid grid-cols-12 ">
+            <div class="col-span-12 h-16 p-2 bg-black">
+                <div id="panel" class="text-2xl p-2 w-full h-full display-none rounded-lg text-white"></div>
+            </div>
+
+            <div onclick="calc(9)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                9
+            </div>
+            <div onclick="calc(8)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                8
+            </div>
+            <div onclick="calc(7)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                7
+            </div>
+            <div id="plus" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                +
+            </div>
+            <div onclick="calc(6)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                6
+            </div>
+            <div onclick="calc(5)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                5
+            </div>
+            <div onclick="calc(4)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                4
+            </div>
+            <div id="minus" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                -
+            </div>
+            <div onclick="calc(3)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                3
+            </div>
+            <div onclick="calc(2)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                2
+            </div>
+            <div onclick="calc(1)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                1
+            </div>
+            <div id="mutiply" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                *
+            </div>
+            <div class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                
+            </div>
+            <div onclick="calc(0)"  class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                0
+            </div>
+            <div class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                
+            </div>
+            <div id="divider" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                /
+            </div>
+            <div id="equal" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                =
+            </div>
+            <div id="clear" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
+                C
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const plus = document.getElementById('plus');
+        const equal = document.getElementById('equal');
+        var input = document.getElementById('panel');
+        const clear = document.getElementById('clear');
+        var number1 = 0;
+        var number2 = 0;
+        var operator = '';
+        var result = 0;
+
+        clear.addEventListener('click', () => {
+            number1 = 0;
+            number2 = 0;
+            operator = '';
+            result = 0;
+            input.innerText = '';
+        })
+
+        plus.addEventListener('click', () => {
+            operator = 'plus';
+            number1 = document.getElementById('panel').innerText;
+            document.getElementById('panel').innerText = ''
+        })
+
+        minus.addEventListener('click', () => {
+            operator = 'minus';
+            number1 = document.getElementById('panel').innerText;
+            document.getElementById('panel').innerText = ''
+        })
+
+        mutiply.addEventListener('click', () => {
+            operator = 'mutiply';
+            number1 = document.getElementById('panel').innerText;
+            document.getElementById('panel').innerText = ''
+        })
+
+        divider.addEventListener('click', () => {
+            operator = 'divider';
+            number1 = document.getElementById('panel').innerText;
+            document.getElementById('panel').innerText = ''
+        })
+
+        equal.addEventListener('click', () => {
+            number2 = document.getElementById('panel').innerText;
+            document.getElementById('panel').innerText = ''
+
+            switch(operator){ 
+                case 'plus': 
+                    result = parseInt(number1) + parseInt(number2);
+                break;
+                case 'minus': 
+                    result = parseInt(number1) - parseInt(number2);
+                break;
+                case 'mutiply': 
+                    result = parseInt(number1) * parseInt(number2);
+                break;
+                case 'divider': 
+                    if (parseInt(number2) == 0) {
+                        result = 'Proibido Dividir Por 0';
+                        break;
+                    }
+                    result = parseInt(number1) / parseInt(number2);
+                break;
+
+            }
+
+            input.innerHTML = result;
+        })
+
+        function calc(num) {
+            input.innerHTML += num
+        }
+    </script>
+</body>
+</html>

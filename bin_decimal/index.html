@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter Binario em Decimal</title>
+
+</head>
+<body class="bg-gray-100 flex flex-col justify-center items-center mt-10 p-10 ">
+
+    <div class="p-5 bg-white rounded-lg h-full w-full flex flex-col gap-5">
+        <div class="flex justify-end w-full">
+            <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Javascript-shield.svg" alt="">
+        </div>
+        <div class="flex flex-col justify-center items-center pb-10">
+            <p class="font-extralight text-xl ">Digite o número binário para ser convertido em decimal.</p> 
+            <div action="#" class="pb-10">
+                <input class="rounded-full p-3 border-2 text-center" id="input-number" type="text" required="required" name="numbers" maxlength="8" pattern="[0]+$" />
+            </div>
+           <p id="result" class="relative  text-2xl font-bold font-serif"></p>
+        </div>
+    </div>
+
+    <script>
+        const number = document.getElementById('input-number');
+        var result = document.getElementById('result');
+
+        console.log();
+
+        number.addEventListener('change', () => {
+            let value = number.value;
+            let iterator = Object.keys(value).reverse();
+
+            let decimal = 0;
+            for (let index = 0; index < value.length; index++) {
+                if (value[index] != 0 && value[index] != 1) {
+                    decimal = 'Carácter não é um número binário';
+                    break;
+                }
+
+                decimal += ( value[index] * (2 ** iterator[index]))
+            }
+
+            result.innerHTML = decimal;
+        })
+
+
+    </script>
+</body>
+</html>
