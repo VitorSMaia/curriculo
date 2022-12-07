@@ -8,70 +8,78 @@
     <title>Calculator in Javascript</title>
 
 </head>
-<body class="bg-gray-100 flex flex-col justify-center items-center mt-10 p-10 ">
-    <div class="p-5 bg-white rounded-lg h-full w-full flex flex-col gap-5">
-        <div class="flex justify-end w-full">
-            <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Javascript-shield.svg" alt="">
+<body class="bg-gray-900">
+    <div class="h-screen flex justify-center items-center flex-col space-y-5">
+        <div class="bg-white min-h-[600px] w-[1300px] rounded-lg p-10">
+            <div class="grid grid-cols-12 space-y-5">
+                <div class="col-span-12 flex gap-1">
+                    <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Javascript-shield.svg" alt="">
+                    <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png" alt="">
+                    <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/640px-CSS3_logo_and_wordmark.svg.png" alt="">
+                </div>
+                <div class="col-span-6 col-start-4 grid grid-cols-12 bg-gray-600 p-5 rounded-xl">
+                    <div class="col-span-12 h-16 p-2 bg-black rounded-xl mb-5">
+                        <div id="panel" class="text-2xl p-2 w-full h-full display-none rounded-lg text-white rounded-xl"></div>
+                    </div>
+                    <div onclick="calc(9)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        9
+                    </div>
+                    <div onclick="calc(8)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        8
+                    </div>
+                    <div onclick="calc(7)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        7
+                    </div>
+                    <div id="plus" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        +
+                    </div>
+                    <div onclick="calc(6)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        6
+                    </div>
+                    <div onclick="calc(5)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        5
+                    </div>
+                    <div onclick="calc(4)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        4
+                    </div>
+                    <div id="minus" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        -
+                    </div>
+                    <div onclick="calc(3)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        3
+                    </div>
+                    <div onclick="calc(2)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        2
+                    </div>
+                    <div onclick="calc(1)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        1
+                    </div>
+                    <div id="mutiply" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        *
+                    </div>
+                    <div class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        
+                    </div>
+                    <div onclick="calc(0)"  class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        0
+                    </div>
+                    <div class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        
+                    </div>
+                    <div id="divider" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        /
+                    </div>
+                    <div id="clear" class="col-span-9 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        C
+                    </div>
+                    <div id="equal" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer active:bg-gray-400">
+                        =
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="grid grid-cols-12 ">
-            <div class="col-span-12 h-16 p-2 bg-black">
-                <div id="panel" class="text-2xl p-2 w-full h-full display-none rounded-lg text-white"></div>
-            </div>
-
-            <div onclick="calc(9)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                9
-            </div>
-            <div onclick="calc(8)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                8
-            </div>
-            <div onclick="calc(7)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                7
-            </div>
-            <div id="plus" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                +
-            </div>
-            <div onclick="calc(6)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                6
-            </div>
-            <div onclick="calc(5)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                5
-            </div>
-            <div onclick="calc(4)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                4
-            </div>
-            <div id="minus" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                -
-            </div>
-            <div onclick="calc(3)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                3
-            </div>
-            <div onclick="calc(2)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                2
-            </div>
-            <div onclick="calc(1)" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                1
-            </div>
-            <div id="mutiply" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                *
-            </div>
-            <div class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                
-            </div>
-            <div onclick="calc(0)"  class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                0
-            </div>
-            <div class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                
-            </div>
-            <div id="divider" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                /
-            </div>
-            <div id="equal" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                =
-            </div>
-            <div id="clear" class="col-span-3 p-5 flex justify-center text-xl bg-gray-200 hover:bg-gray-100 cursor-pointer">
-                C
-            </div>
+        <div>
+            <p class="text-white ">© 2022 DevTech</p>
         </div>
     </div>
 

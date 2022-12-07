@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator in Javascript</title>
+
+</head>
+<body class="bg-gray-900">
+    <div class="h-screen flex justify-center items-center flex-col space-y-5">
+        <div class="bg-white min-h-[600px] w-[1300px] rounded-lg p-10">
+            <div class="grid grid-cols-12">
+                <div class="col-span-12 flex gap-1">
+                    <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Javascript-shield.svg" alt="">
+                    <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png" alt="">
+                    <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/640px-CSS3_logo_and_wordmark.svg.png" alt="">
+                </div>
+                <div class="col-span-6 font-light text-xl">
+                    <ul id="ul-container">
+                    </ul>
+                </div>
+                <div class="col-span-6">
+                    <div id="details" class="w-full h-full p-5 border-4 border-black rounded-lg space-y-5 font-extralight text-xl shadow-xl">
+                        <label class="flex gap-1">
+                            Name: 
+                            <p id="details-name"></p>
+                        </label>
+                        <label class="flex gap-1">
+                            Year:
+                            <p id="details-year"></p>
+                        </label>
+                        <label class="flex gap-1">
+                            City:
+                            <p id="details-city"></p>
+                        </label>
+                        <label class="flex gap-1">
+                            State:
+                            <p id="details-state"></p>
+                        </label>
+                        <label class="flex gap-1">
+                            Country:
+                            <p id="details-country"></p>
+                        </label>
+                        <label class="flex gap-1">
+                            Birthday:
+                            <p id="details-birthday"></p>
+                        </label>
+                        <label class="flex gap-1">
+                            Telephone:
+                            <p id="details-telephone"></p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="text-white ">© 2022 DevTech</p>
+        </div>
+    </div>
+    <script>
+        const people = [
+              {id:1, name: "João Vitor", year: "22", city: "Fortaleza", state: "CE", country: "BR", telephone: "+11 913564982", birthday: "06 Jun"},
+              {id:2, name: "Rogerio Gregorio", year: "39", city: "Maringá", state: "PA", country: "BR", telephone: "+11 913564982", birthday: "26 Jun"},
+              {id:3, name: "Matheus Santos", year: "20", city: "São Paulo", state: "SP", country: "BR", telephone: "+11 913564982", birthday: "05 Jun"},
+              {id:4, name: "Ricardo Lime", year: "41", city: "São Paulo", state: "SP", country: "BR", telephone: "+11 913564982", birthday: "17 Jun"},
+              {id:5, name: "Northon Iserarht", year: "25", city: "Canoas", state: "RS", country: "BR", telephone: "+11 913564982", birthday: "20 Jun"},
+        ];
+
+        const ulDiv = document.getElementById('ul-container');
+        const detailsName = document.getElementById('details-name');
+        const detailsYear = document.getElementById('details-year');
+        const detailsCity = document.getElementById('details-city');
+        const detailsState = document.getElementById('details-state');
+        const detailsCountry = document.getElementById('details-country');
+        const detailsTelephone = document.getElementById('details-telephone');
+        const detailsBirthday = document.getElementById('details-birthday');
+
+        window.addEventListener('load', () => {
+
+            for(let i = 0; i < people.length; i++) {
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+                a.setAttribute('class', 'cursor-pointer flex my-5 w-max')
+                a.setAttribute('onclick', `viewDetails(${people[i].id})`)
+                li.setAttribute('class', '')
+                a.innerText = people[i].name
+                li.append(a)
+                ulDiv.append(li)
+            }
+
+        })
+
+        function viewDetails(id) {
+            let user;
+
+            for(let i = 0; i < people.length; i++) {
+                if(people[i].id == id) {
+                    user = people[i]
+                }
+            }
+
+            detailsName.innerText = user.name
+            detailsYear.innerText = user.year
+            detailsCity.innerText = user.city
+            detailsState.innerText = user.state
+            detailsCountry.innerText = user.country
+            detailsTelephone.innerText = user.telephone
+            detailsBirthday.innerText = user.birthday
+
+        }
+
+    </script>
+</body>
+</html>

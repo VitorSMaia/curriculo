@@ -8,48 +8,57 @@
     <title>Border Radius Preview</title>
 
 </head>
-<body class="bg-gray-100 flex flex-col justify-center items-center">
-
-    <div class="p-2 bg-white rounded-lg m-2">
-        <div class="flex justify-end w-full">
-            <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Javascript-shield.svg" alt="">
-        </div>
-        <div class="grid grid-cols-12 ">
-            <div class="col-span-12 md:col-span-2">
-                <label for="" class="flex flex-col font-bold">
-                    LADO A
-                    <input id="inputA" type="range"alt=""/>
-                </label>
-                <label for="" class="flex flex-col font-bold">
-                    LADO B
-                    <input id="inputB" type="range" alt=""/>
-                </label>
-                <label for="" class="flex flex-col font-bold">
-                    LADO C
-                    <input id="inputC" type="range" alt=""/>
-                </label>
-                <label for="" class="flex flex-col font-bold">
-                    LADO D
-                    <input id="inputD" type="range" alt=""/>
-                </label>
-            </div>
-            <div class="col-span-12 md:col-span-10 mx-auto p-5">
-                <div class="flex flex-col justify-center item-center gap-y-5">
-                    <div id="square" class="h-60 w-60" style="color:aqua; background-color: black; border: 5px; border-color: aqua; border-style: solid; border-end-start-radius: 100%; border-end-end-radius: 100%; border-start-end-radius: 100%; border-start-start-radius: 100%;" >
-                    </div>
-                    <button class="px-2 py-3 rounded-lg bg-amber-400 hover:-translate-y-1 active:translate-y-1" onclick="copyClipBoard()">Copy</button>
-                    <div id="code" class="border-2 border-amber-500 bg-gray-100 max-w-[400px] p-2">
-                        style="border-style: solid; border-end-start-radius: <a id="inputAValue"></a> 
-                        border-style: solid; border-end-end-radius: <a id="inputBValue"></a> 
-                        border-style: solid; border-start-start-radius: <a id="inputCValue"></a> 
-                        border-style: solid; border-start-end-radius: <a id="inputDValue"></a>"
+<body class="bg-gray-900">
+    <div class="h-screen flex justify-center items-center flex-col space-y-5">
+        <div class="bg-white min-h-[600px] w-[1300px] rounded-lg p-10">
+            <div class="grid grid-cols-12">
+                <div class="col-span-12 flex gap-1">
+                    <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Javascript-shield.svg" alt="">
+                    <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png" alt="">
+                    <img class="h-20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/640px-CSS3_logo_and_wordmark.svg.png" alt="">
+                </div>
+                <div class="col-span-12">
+                    <div class="grid grid-cols-12 ">
+                        <div class="col-span-12 md:col-span-2">
+                            <label for="" class="flex flex-col font-bold">
+                                LADO A
+                                <input id="inputA" type="range"alt=""/>
+                            </label>
+                            <label for="" class="flex flex-col font-bold">
+                                LADO B
+                                <input id="inputB" type="range" alt=""/>
+                            </label>
+                            <label for="" class="flex flex-col font-bold">
+                                LADO C
+                                <input id="inputC" type="range" alt=""/>
+                            </label>
+                            <label for="" class="flex flex-col font-bold">
+                                LADO D
+                                <input id="inputD" type="range" alt=""/>
+                            </label>
+                        </div>
+                        <div class="col-span-12 md:col-span-10 mx-auto p-5">
+                            <div class="flex flex-col justify-center item-center gap-y-5">
+                                <div id="square" class="h-60 w-60" style="color:aqua; background-color: black; border: 5px; border-color: aqua; border-style: solid; border-end-start-radius: 100%; border-end-end-radius: 100%; border-start-end-radius: 100%; border-start-start-radius: 100%;" >
+                                </div>
+                                <button class="px-2 py-3 rounded-lg bg-amber-400 hover:-translate-y-1 active:translate-y-1" onclick="copyClipBoard()">Copy</button>
+                                <div id="code" class="border-2 border-amber-500 bg-gray-100 max-w-[400px] p-2">
+                                    style="border-style: solid; border-end-start-radius: <a id="inputAValue"></a> 
+                                    border-style: solid; border-end-end-radius: <a id="inputBValue"></a> 
+                                    border-style: solid; border-start-start-radius: <a id="inputCValue"></a> 
+                                    border-style: solid; border-start-end-radius: <a id="inputDValue"></a>"
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                
             </div>
-            
         </div>
+        <div>
+            <p class="text-white ">© 2022 DevTech</p>
+        </div>
+    </div>
+    
     </div>
 
     <script>
